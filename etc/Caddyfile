@@ -1,0 +1,7 @@
+0.0.0.0:{$PORT} {
+	root /home/application/current
+
+	gzip
+	ext .html
+	log stdout
+}

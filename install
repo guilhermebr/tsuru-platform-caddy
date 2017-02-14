@@ -1,0 +1,15 @@
+#!/bin/bash -e
+
+# Copyright 2016 tsuru authors. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+SOURCE_DIR=/var/lib/tsuru
+source ${SOURCE_DIR}/base/rc/config
+
+sudo apt-get install -y curl
+curl -s https://getcaddy.com | bash
+
+cp ${SOURCE_DIR}/caddy/Procfile ${SOURCE_DIR}/default/Procfile
+cp ${SOURCE_DIR}/caddy/etc/Caddyfile /etc/Caddyfile
+echo "sudo chmod 777 /dev/stdout" >> /etc/profile
