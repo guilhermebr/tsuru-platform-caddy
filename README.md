@@ -13,3 +13,16 @@ repository](https://github.com/guilhermebr/tsuru-platform-caddy/blob/master/etc/
 A common practice is to copy it and then do some customizations.
 See more about [Caddy Directives](https://caddyserver.com/docs/caddyfile).
 
+## Using on Tsuru
+
+1 - By dockerhub:
+
+```
+$ tsuru platform-add caddy -i guilhermebr/platform-caddy
+```
+
+2 - By remote Dockerfile
+
+```
+tsuru platform-add caddy -d https://raw.githubusercontent.com/guilhermebr/tsuru-platform-caddy/master/Dockerfile
+```
