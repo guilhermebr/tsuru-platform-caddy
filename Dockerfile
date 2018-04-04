@@ -4,5 +4,7 @@
 
 FROM	tsuru/base-platform
 ADD	. /var/lib/tsuru/caddy
-RUN	cp /var/lib/tsuru/caddy/deploy /var/lib/tsuru
-RUN	/var/lib/tsuru/caddy/install
+RUN	sudo cp /var/lib/tsuru/caddy/deploy /var/lib/tsuru
+RUN set -ex; \
+    sudo /var/lib/tsuru/caddy/install; \
+    sudo rm -rf /var/lib/apt/lists/*

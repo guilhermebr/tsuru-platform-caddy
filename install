@@ -8,7 +8,7 @@ SOURCE_DIR=/var/lib/tsuru
 source ${SOURCE_DIR}/base/rc/config
 
 sudo apt-get install -y curl
-curl -s https://getcaddy.com | bash
+curl https://getcaddy.com | bash -s personal http.git
 
 cp ${SOURCE_DIR}/caddy/Procfile ${SOURCE_DIR}/default/Procfile
 cp ${SOURCE_DIR}/caddy/etc/Caddyfile /etc/Caddyfile
